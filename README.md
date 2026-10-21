@@ -7,14 +7,14 @@ A responsive, single-file romantic proposal website. Open `index.html` in a mode
 Search `index.html` for these comments:
 
 - `EDIT HER NAME AND YOUR INTRO TEXT HERE`
-- `EDIT HER PHOTO HERE` — replace the three placeholder image URLs and their `alt` text. Remove each `YOUR PHOTO BELONGS HERE` tag after adding real pictures.
+- `EDIT HER PHOTO HERE` — the three supplied JPEG photos are embedded directly in the HTML in the order provided. Replace an image’s `src` and `alt` text to change a photo.
 - `EDIT HER FAVORITE BEHAVIOR HERE`
 - `EDIT QUIZ QUESTIONS / OPTIONS HERE`
 - `EDIT YOUR PROPOSAL QUESTION HERE`
 - `EDIT YOUR POP-UP LOVE NOTE AND SIGNATURE HERE`
 - `EDIT HER PROFILE LINK HERE`
 
-The existing images show flowers, a sunset, and coffee as clearly labeled placeholders. The envelope illustration is built entirely with inline SVG and CSS.
+All three supplied photos are included as original JPEG data URIs, with no separate image files or external photo host. The gallery preserves each full picture, including the collage, without cropping. The envelope illustration is built entirely with inline SVG and CSS.
 
 ## Interactions
 
@@ -38,6 +38,6 @@ Drag a folder containing `index.html` into Netlify's deploy interface, or connec
 
 ## Dependencies
 
-Application HTML, CSS, and JavaScript live in one file. Tailwind CSS loads from its browser CDN, canvas-confetti from jsDelivr, fonts from Google Fonts, and demo photos from Unsplash. These external assets require an internet connection. The custom CSS preserves the layout if Tailwind is unavailable, and the love note works even if confetti cannot load.
+Application HTML, CSS, and JavaScript live in one file. Tailwind CSS loads from its browser CDN, canvas-confetti from jsDelivr, and fonts from Google Fonts. These external assets require an internet connection; the embedded gallery photos do not. The custom CSS preserves the layout if Tailwind is unavailable, and the love note works even if confetti cannot load.
 
 References: [Tailwind CDN](https://tailwindcss.com/docs/installation/play-cdn), [canvas-confetti](https://github.com/catdad/canvas-confetti).

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7f3">
+  <meta name="description" content="A little corner of the universe, made with love, just for Putul.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>For Putul, with love ♡</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23fbf0ee'/%3E%3Cpath d='M32 49 13 31C-1 15 22 5 32 20 42 5 65 15 51 31Z' fill='%23ac5261'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: https://tailwindcss.com/docs/installation/play-cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
+  <!-- Confetti is optional: the love note still opens if this CDN is unavailable. -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js" defer></script>
+  <style>
+    :root{--cream:#fbf7f3;--paper:#fffdf9;--ink:#493738;--muted:#806e6d;--rose:#a74f60;--pink:#f4e3e2;--line:#e7dcd5;--serif:'Cormorant Garamond',Georgia,serif;--hand:'Caveat',cursive;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.75}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-decoration:none}button:disabled{cursor:default}img{display:block;max-width:100%}::selection{background:#e9c6cd}h1,h2,h3,p{margin:0}h1,h2,h3{font-weight:400}h1,h2,.serif{font-family:var(--serif)}em{color:var(--rose);font-weight:400}svg.icon{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #a74f60;outline-offset:5px}section{scroll-margin-top:30px}.container{width:min(1120px,calc(100% - 64px));margin-inline:auto}.muted{color:var(--muted)}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--rose);font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase}.eyebrow:before{content:'';display:block;width:26px;height:1px;background:var(--rose)}.hand{font-family:var(--hand);font-size:24px}.button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:12px;padding:13px 24px;border:1px solid transparent;border-radius:7px;background:var(--rose);color:#fffdf9;font-size:12px;font-weight:500;transition:background .2s,transform .2s,box-shadow .2s}.button:hover{background:#8b3d4c;transform:translateY(-2px);box-shadow:0 7px 18px #a74f6020}.button.secondary{border-color:#d9c7c5;background:transparent;color:var(--ink)}.button.secondary:hover{background:#f4e6e3}.skip-link{position:fixed;top:8px;left:8px;z-index:100;background:var(--paper);padding:10px 18px;transform:translateY(-160%)}.skip-link:focus{transform:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
+    .site-header{position:relative;z-index:5;border-bottom:1px solid var(--line)}.header-inner{height:90px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:24px}.brand svg{color:var(--rose);width:24px;height:24px}.header-nav{display:flex;gap:30px;font-size:11px;color:var(--muted)}.header-nav a:hover{color:var(--rose)}.profile-link{display:inline-flex;align-items:center;gap:8px;border:1px solid #e5d8d1;border-radius:30px;padding:8px 13px;font-size:10px}.profile-link svg{width:13px;height:13px}
+    .hero{position:relative;overflow:hidden;padding:90px 0 82px}.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:45px;align-items:center}.hero h1{font-size:clamp(50px,5.8vw,78px);line-height:1.05;letter-spacing:-2.3px;margin:24px 0}.hero-copy{max-width:390px;color:var(--muted);font-size:13px;line-height:1.9}.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin-top:28px}.hero-aside{font-family:var(--hand);font-size:21px;color:#98817d;transform:rotate(-5deg)}.hero-footnote{display:flex;align-items:center;gap:9px;margin-top:28px;font-size:10px;color:#8d7c76;letter-spacing:.3px}.hero-footnote svg{width:13px;height:13px}.letter-scene{position:relative;min-height:450px;display:grid;place-items:center}.letter-scene:before{content:'';position:absolute;inset:20px 0;border:1px solid #eadcd3;border-radius:50%;transform:rotate(-25deg)}.letter-scene:after{content:'';position:absolute;inset:40px 25px;border:1px dashed #e9d9d1;border-radius:50%;transform:rotate(17deg)}.scene-glow{position:absolute;inset:20px;border-radius:50%;background:radial-gradient(ellipse,#edd4cb6b,transparent 69%)}.envelope{position:relative;z-index:1;width:310px;height:210px;margin-top:120px;transform:rotate(-8deg);filter:drop-shadow(0 16px 18px #81615116)}.envelope-back{position:absolute;inset:0;border-radius:5px;background:#e6c2b8}.envelope-back:before{content:'';position:absolute;top:-107px;border-inline:155px solid transparent;border-bottom:110px solid #e8c6bd}.letter{position:absolute;left:21px;right:21px;height:250px;bottom:42px;transform:rotate(3deg);background:var(--paper);border:1px solid #f0e4d9;border-radius:3px;padding:28px;text-align:center;box-shadow:0 4px 20px #704d4510}.letter .tiny{font-size:8px;letter-spacing:2px;color:#a0877e}.letter .greeting{font:35px var(--hand);color:var(--rose);margin-top:12px}.letter .note{font:21px/1.35 var(--hand);color:#7c685e;margin-top:10px}.letter .letter-heart{margin-top:12px;color:var(--rose);font:30px var(--serif)}.envelope-front{position:absolute;inset:0;overflow:hidden;border-radius:4px;background:linear-gradient(147deg,transparent 49.7%,#edd1c7 50%) top left/50% 100% no-repeat,linear-gradient(213deg,transparent 49.7%,#e9c9be 50%) top right/50% 100% no-repeat;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}.envelope-front:after{content:'';position:absolute;inset:0;background:#f0d6cc;clip-path:polygon(0 100%,50% 42%,100% 100%);border-bottom:1px solid #d6ada3}.seal{position:absolute;z-index:2;top:100px;left:calc(50% - 24px);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#f9e9e4;background:#ab5b66;box-shadow:inset 0 0 0 4px #b86a75,0 3px 7px #6f374228;font-size:23px}.scene-caption{position:absolute;z-index:2;bottom:0;right:28px;font:24px var(--hand);color:#91756d;transform:rotate(-9deg)}.scene-caption:before{content:'↖';display:inline-block;font-size:32px;margin-right:12px}.flower-sprig{position:absolute;width:140px;height:240px;right:8px;top:58px;z-index:2;transform:rotate(18deg)}.scene-star{position:absolute;color:#b98477;font:38px var(--serif);z-index:2}.star-one{left:30px;top:75px}.star-two{right:45px;bottom:65px;font-size:24px}.little-heart{position:absolute;left:36px;bottom:85px;color:#b78481;font:30px var(--serif);transform:rotate(-20deg)}
+    .divider-note{display:flex;align-items:center;justify-content:center;gap:22px;padding:22px 0;border-block:1px solid var(--line);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#92766f}.divider-note span:first-child,.divider-note span:last-child{color:#b97c83;font-size:15px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}.section-heading h2{font-size:clamp(37px,4.2vw,51px);line-height:1.1;letter-spacing:-.9px;margin-top:14px}.section-heading p{font-size:12px;max-width:280px;color:var(--muted)}.memories{padding:85px 0 78px}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;padding:12px 5px 10px}.photo-card{position:relative;display:block;width:100%;background:var(--paper);border:1px solid #e9dfd7;padding:13px 13px 17px;box-shadow:0 6px 20px #7b5b4810;text-align:left;transform:rotate(-2deg);transition:transform .25s,border-color .25s,box-shadow .25s}.photo-card:nth-child(2){transform:rotate(2deg);margin-top:15px}.photo-card:nth-child(3){transform:rotate(-1.5deg)}.photo-card:hover{transform:translateY(-7px) rotate(0);box-shadow:0 12px 26px #7b5b481a}.photo-card[aria-pressed=true]{border-color:var(--rose);box-shadow:0 0 0 2px #a74f6020,0 10px 28px #7b5b4818}.photo-wrap{display:block;height:270px;position:relative;overflow:hidden;background:#eee3db}.photo-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.photo-card:hover img{transform:scale(1.035)}.photo-tag{position:absolute;bottom:9px;left:9px;padding:3px 8px;border-radius:3px;background:#fffdf9e6;color:#715b54;font-size:8px;letter-spacing:.4px}.photo-heart{position:absolute;right:9px;top:9px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fffdf9e8;color:var(--rose)}.photo-heart svg{width:16px;height:16px}.photo-card[aria-pressed=true] .photo-heart{background:var(--rose);color:white}.photo-card[aria-pressed=true] .photo-heart svg{fill:currentColor}.photo-caption{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:13px}.photo-title{font:24px var(--hand);color:#705550}.photo-number{font-size:9px;letter-spacing:1px;color:#a38a80}.photo-hint{display:flex;justify-content:center;align-items:center;gap:7px;min-height:26px;margin-top:23px;color:#8c7770;font-size:10px}.photo-hint svg{width:13px;height:13px}.image-fallback{height:100%;display:grid;place-items:center;align-content:center;gap:6px;background:#f4e5df;color:#97646a;text-align:center;font-size:12px}.image-fallback span{font:64px var(--serif)}
+    .reasons{padding:74px 0;background:#f4ede7;border-block:1px solid #ece1d9}.reasons-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}.reasons h2{font-size:clamp(38px,4.2vw,51px);line-height:1.12;letter-spacing:-1px;margin:17px 0}.reasons-intro{max-width:300px;font-size:12px;color:var(--muted)}.reasons-doodle{margin:22px 0 0 30px;font:27px var(--hand);color:#9d7973;transform:rotate(-7deg)}.reason{padding:0 0 22px;display:grid;grid-template-columns:34px 1fr;gap:15px;border-bottom:1px solid #e3d7ce}.reason+.reason{padding-top:22px}.reason:last-child{border:0;padding-bottom:0}.reason-icon{width:32px;height:32px;display:grid;place-items:center;color:var(--rose);background:#f9f3ed;border-radius:50%}.reason-icon svg{width:16px;height:16px}.reason h3{font:26px var(--serif);margin-top:-5px}.reason p{margin-top:5px;color:var(--muted);font-size:12px}
+    .quiz{padding:85px 0}.quiz-shell{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;padding:44px 48px;border:1px solid var(--line);border-radius:12px;background:#fffcf7}.quiz h2{font-size:43px;line-height:1.12;letter-spacing:-.7px;margin:16px 0}.quiz-intro{color:var(--muted);font-size:12px;max-width:260px}.quiz-note{font:23px var(--hand);color:#a77b75;transform:rotate(-5deg);margin-top:24px}.quiz-form{display:grid;gap:20px}.field-label,.quiz-form legend{display:block;padding:0;font-size:12px;font-weight:500;margin-bottom:10px}.field-label span,.quiz-form legend span{color:#b38b81;margin-right:7px;font-size:10px}.text-input{width:100%;background:var(--cream);border:1px solid #e2d6cc;border-radius:5px;padding:11px 13px;color:var(--ink);font-size:12px;transition:border-color .2s}.text-input::placeholder{color:#a28e83}.text-input:focus{border-color:var(--rose)}fieldset{border:0;padding:0;margin:0;min-width:0}.date-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.date-option{position:relative;cursor:pointer}.date-option input{position:absolute;opacity:0;width:1px;height:1px}.option-label{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 7px;border:1px solid #e5d9ce;border-radius:5px;font-size:10px;transition:background .2s,border-color .2s;background:var(--paper)}.option-label svg{width:14px;height:14px;color:#a57571}.date-option input:checked+.option-label{border-color:var(--rose);background:#f7e6e5;color:var(--rose)}.date-option input:focus-visible+.option-label{outline:3px solid var(--rose);outline-offset:3px}.form-bottom{display:flex;align-items:center;flex-wrap:wrap;gap:12px}.form-bottom .button{min-height:41px;padding:9px 16px;font-size:11px}.save-status{font-size:10px;color:var(--muted);flex:1;min-width:150px}.local-note{font-size:9px;color:#89766b;margin-top:8px}.summary-box{padding:13px 16px;background:#f5e9e4;border-radius:6px;font-size:12px;color:#7e5654}.summary-box strong{font-weight:500}.summary-box p{margin-top:4px}
+    .proposal{position:relative;overflow:hidden;text-align:center;padding:75px 25px 70px;background:#f5e7e4;border-block:1px solid #ecd7d3}.proposal:before,.proposal:after{content:'♡';position:absolute;font:220px var(--serif);color:#ead4d1;transform:rotate(-20deg);pointer-events:none}.proposal:before{left:4%;top:8px}.proposal:after{right:4%;bottom:0;transform:rotate(20deg);font-size:150px}.proposal-content{position:relative;z-index:1;max-width:620px;margin:auto}.proposal .eyebrow{justify-content:center}.proposal .eyebrow:before{display:none}.proposal .hand{color:#a57d75;margin:17px 0 5px}.proposal h2{font-size:clamp(53px,6vw,76px);letter-spacing:-2px;line-height:1.12}.proposal-copy{font-size:12px;max-width:390px;color:#896963;margin:17px auto 0}.proposal-actions{display:flex;align-items:center;justify-content:center;gap:14px;min-height:72px;margin-top:23px}.yes-button{min-width:156px;transition:transform .25s,background .25s;box-shadow:0 5px 16px #a74f601a}.no-button{min-width:103px;transition:translate .18s,background .2s}.proposal-feedback{min-height:23px;margin-top:10px;font-size:11px;color:#875e5b}.proposal-signoff{margin-top:25px;font:23px var(--hand);color:#a57d75}.site-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:90px;font-size:10px;color:#9a837a}.site-footer .footer-love{display:flex;align-items:center;gap:7px}.footer-love svg{width:12px;height:12px;color:var(--rose)}.site-footer a{border-bottom:1px solid #d6bdb5;padding-bottom:2px}.back-top{display:flex;gap:6px;align-items:center}.back-top svg{width:12px;height:12px}
+    .particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}.floating-heart{position:absolute;bottom:-50px;font-family:var(--serif);color:#c78d9640;animation:float-up var(--duration) linear infinite;animation-delay:var(--delay);left:var(--left);font-size:var(--size)}@keyframes float-up{0%{transform:translateY(0) rotate(-15deg);opacity:0}10%,85%{opacity:1}100%{transform:translateY(-115vh) translateX(40px) rotate(25deg);opacity:0}}.site-header,main,.site-footer{position:relative}.reveal{opacity:1;transform:none}.motion-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.motion-ready .reveal.visible{opacity:1;transform:none}.love-dialog{margin:auto;inset:0;height:fit-content;width:min(460px,calc(100% - 36px));max-height:calc(100dvh - 40px);overflow:auto;background:var(--paper);border:1px solid #ead6ce;border-radius:16px;padding:43px 34px 32px;text-align:center;color:var(--ink);box-shadow:0 25px 100px #4a233533}.love-dialog::backdrop{background:#49373866;backdrop-filter:blur(6px)}.dialog-close{position:absolute;right:12px;top:12px;display:grid;place-items:center;width:32px;height:32px;border:0;background:transparent;color:#8a6c67;border-radius:50%}.dialog-close:hover{background:var(--pink)}.modal-heart{width:65px;height:65px;border-radius:50%;background:var(--pink);display:grid;place-items:center;margin:0 auto 14px;color:var(--rose);font:35px var(--serif)}.love-dialog .hand{color:var(--rose);font-size:26px}.love-dialog h2{font-size:43px;line-height:1.1;margin:12px 0}.love-dialog .love-message{font-size:13px;line-height:1.9;color:var(--muted)}.love-dialog .love-signature{font:25px var(--hand);color:var(--rose);margin:20px 0}.love-dialog .button{min-height:43px}.dialog-plan{margin-top:16px;padding:12px;border-radius:6px;background:#f8efea;font-size:12px;color:#805e58}.dialog-plan:empty{display:none}
+    @media(min-width:1500px){.hero{padding-block:110px}.hero-grid{gap:75px}}
+    @media(max-width:900px){.container{width:calc(100% - 48px)}.header-nav{gap:18px}.hero{padding:65px 0}.hero-grid{gap:15px}.hero h1{font-size:61px}.letter-scene{transform:scale(.88);transform-origin:center;min-width:330px}.hero-actions{gap:13px}.hero-aside{font-size:19px}.photo-wrap{display:block;height:225px}.photo-title{font-size:21px}.gallery{gap:19px}.reasons-layout{gap:45px}.quiz-shell{gap:35px;padding:34px}.date-options{grid-template-columns:1fr}.option-label{justify-content:flex-start;padding-inline:13px}}
+    @media(max-width:680px){body{font-size:13px}.container{width:calc(100% - 40px)}.header-inner{height:74px;gap:10px}.brand{font-size:23px}.header-nav{display:none}.profile-link{font-size:9px;padding:7px 10px}.hero{padding:45px 0 35px}.hero-grid{grid-template-columns:1fr;gap:4px}.hero h1{font-size:clamp(51px,10.5vw,68px);line-height:1.04;letter-spacing:-1.8px;margin:21px 0}.hero-copy{max-width:410px;font-size:12px}.eyebrow{font-size:9px;letter-spacing:2px}.hero-actions{margin-top:23px;gap:20px}.hero-footnote{margin-top:20px}.letter-scene{min-height:400px;min-width:0;width:min(410px,100%);justify-self:center;transform:scale(.91);margin-top:12px}.scene-caption{bottom:0;right:0}.divider-note{padding:18px 0;gap:15px;font-size:8px;letter-spacing:1.7px}.memories{padding:58px 0 48px}.section-heading{display:block;margin-bottom:24px}.section-heading p{margin-top:17px;max-width:330px}.gallery{grid-template-columns:1fr;gap:26px;max-width:350px;margin:auto;padding:10px 10px}.photo-card:nth-child(2){margin-top:0}.photo-wrap{display:block;height:300px}.photo-title{font-size:25px}.photo-hint{max-width:300px;margin-inline:auto;text-align:center;align-items:flex-start}.reasons{padding:52px 0}.reasons-layout{grid-template-columns:1fr;gap:34px}.reasons-intro{max-width:330px}.reasons-doodle{display:none}.reason{gap:12px}.reason h3{font-size:27px}.quiz{padding:50px 0}.quiz-shell{grid-template-columns:1fr;gap:28px;padding:27px 22px}.quiz h2{font-size:39px}.quiz-note{display:none}.quiz-intro{max-width:310px}.date-options{grid-template-columns:1fr}.option-label{padding:11px 13px;font-size:11px}.proposal{padding:57px 20px 49px}.proposal:before{font-size:160px;left:-40px}.proposal:after{right:-25px;font-size:120px}.proposal .hand{font-size:22px}.proposal h2{font-size:59px;letter-spacing:-1.5px}.proposal-copy{max-width:310px}.site-footer{min-height:110px;flex-wrap:wrap;justify-content:center;align-content:center;column-gap:24px;row-gap:12px}.site-footer .footer-love{width:100%;justify-content:center}.love-dialog{padding:40px 25px 27px}.love-dialog h2{font-size:39px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.particles{display:none}.motion-ready .reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to the love letter</a>
+  <!-- Reusable icons are inline, so there is no icon-library dependency. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Zm13 1h2a3 3 0 0 1 0 6h-2M7 3v2m4-3v3m4-2v2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  </svg>
+  <div id="particles" class="particles" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="For you, back to top"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>for you.</a>
+      <nav class="header-nav" aria-label="Main navigation"><a href="#memories">Little memories</a><a href="#reasons">Why you</a><a href="#question">A little question</a></nav>
+      <!-- EDIT HER PROFILE LINK HERE -->
+      <a class="profile-link" href="https://www.instagram.com/urmiislamsristy/" target="_blank" rel="noopener noreferrer" aria-label="Putul's Instagram profile, opens in a new tab">Only for Putul <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">A little corner of my heart</p>
+          <!-- EDIT HER NAME AND YOUR INTRO TEXT HERE -->
+          <h1 id="hero-title">Putul, you make<br>my world a little<br><em>more beautiful.</em></h1>
+          <p class="hero-copy">Some people make life feel softer, brighter, and a little more magical. For me, that person is you. So I made you a little something — just because you’re you.</p>
+          <div class="hero-actions"><a href="#memories" class="button">Open my heart <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="hero-aside">a little nervous, a lot in love ♡</span></div>
+          <p class="hero-footnote"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>Made with a full heart. And a little courage.</p>
+        </div>
+        <div class="letter-scene" role="img" aria-label="A pink envelope, sealed with a heart, holding a handwritten love letter to Putul">
+          <div class="scene-glow"></div><span class="scene-star star-one">✧</span><span class="scene-star star-two">✧</span><span class="little-heart">♡</span>
+          <div class="envelope"><div class="envelope-back"></div><div class="letter"><p class="tiny">A SPECIAL DELIVERY</p><p class="greeting">Dear Putul,</p><p class="note">If I could give you one thing,<br>it would be the chance to see<br>yourself through my eyes.</p><p class="letter-heart">♡</p></div><div class="envelope-front"></div><span class="seal">♡</span></div>
+          <svg class="flower-sprig" viewBox="0 0 140 240" fill="none" aria-hidden="true"><path d="M38 228c28-67 42-127 49-190M64 158c-18-19-26-30-29-46m42 5c19-18 27-30 31-44" stroke="#8d9773" stroke-width="2"/><path d="M64 162c-27-5-37-16-33-32 18 0 30 12 33 32M75 125c24-5 36-16 35-30-20 1-31 12-35 30M49 202c-19-7-26-19-22-30 15 3 24 16 22 30" fill="#a8ad8a"/><g fill="#d7a39e" stroke="#c5918c" stroke-width=".8"><ellipse cx="88" cy="28" rx="12" ry="24" transform="rotate(-8 88 28)"/><ellipse cx="72" cy="38" rx="12" ry="24" transform="rotate(-42 72 38)"/><ellipse cx="104" cy="37" rx="12" ry="23" transform="rotate(38 104 37)"/><ellipse cx="88" cy="43" rx="16" ry="22"/></g><path d="M75 45c4 17 20 25 27 2" stroke="#b77f7d" stroke-width="1.2"/><path d="m78 62 9 7 11-8" stroke="#8d9773" stroke-width="2"/></svg>
+          <p class="scene-caption">a love letter, in pixels</p>
+        </div>
+      </div>
+    </section>
+    <div class="divider-note container" aria-hidden="true"><span>✧</span><span>A few little moments. One very full heart.</span><span>✧</span></div>
+    <section id="memories" class="memories container" aria-labelledby="memories-title">
+      <div class="section-heading reveal"><div><p class="eyebrow">The little things, kept forever</p><h2 id="memories-title">Every version of you,<br><em>my favorite.</em></h2></div><p>A few little frames, waiting for your photos.<br>Tap a picture to crown your favorite. ♡</p></div>
+      <div class="gallery grid md:grid-cols-3 gap-6 reveal" role="group" aria-label="Choose your favorite picture">
+        <button type="button" class="photo-card" data-photo="1" data-title="That sunshine smile" aria-pressed="false" aria-label="Choose picture 1: That sunshine smile">
+          <span class="photo-wrap block">
+            <!-- EDIT HER PHOTO HERE: replace src AND alt with Putul's first photo. -->
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="Placeholder: yellow flowers against a bright blue sky" width="600" height="650" loading="lazy" decoding="async">
+            <span class="photo-tag">YOUR PHOTO BELONGS HERE</span><span class="photo-heart"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          </span><span class="photo-caption"><span class="photo-title">That sunshine smile</span><span class="photo-number">01 / 03</span></span>
+        </button>
+        <button type="button" class="photo-card" data-photo="2" data-title="Your little adventures" aria-pressed="false" aria-label="Choose picture 2: Your little adventures">
+          <span class="photo-wrap block">
+            <!-- EDIT HER PHOTO HERE: replace src AND alt with Putul's second photo. -->
+            <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="Placeholder: a peaceful ocean beneath a warm sunset" width="600" height="650" loading="lazy" decoding="async">
+            <span class="photo-tag">YOUR PHOTO BELONGS HERE</span><span class="photo-heart"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          </span><span class="photo-caption"><span class="photo-title">Your little adventures</span><span class="photo-number">02 / 03</span></span>
+        </button>
+        <button type="button" class="photo-card" data-photo="3" data-title="Simply, beautifully you" aria-pressed="false" aria-label="Choose picture 3: Simply, beautifully you">
+          <span class="photo-wrap block">
+            <!-- EDIT HER PHOTO HERE: replace src AND alt with Putul's third photo. -->
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="Placeholder: coffee brewing in a cozy café" width="600" height="650" loading="lazy" decoding="async">
+            <span class="photo-tag">YOUR PHOTO BELONGS HERE</span><span class="photo-heart"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          </span><span class="photo-caption"><span class="photo-title">Simply, beautifully you</span><span class="photo-number">03 / 03</span></span>
+        </button>
+      </div>
+      <p id="photo-status" class="photo-hint" role="status" aria-live="polite">♡ All lovely. But which one feels most like you?</p>
+    </section>
+    <section id="reasons" class="reasons" aria-labelledby="reasons-title">
+      <div class="container reasons-layout">
+        <div class="reveal"><p class="eyebrow">In case you ever wonder</p><h2 id="reasons-title">It’s the way<br><em>you’re you.</em></h2><p class="reasons-intro">There isn’t one grand reason. It’s a hundred tiny things that quietly became my favorite part of every day.</p><p class="reasons-doodle">the list could go on, you know…</p></div>
+        <div class="reveal">
+          <!-- EDIT HER FAVORITE BEHAVIOR HERE: personalize these three qualities. -->
+          <article class="reason"><span class="reason-icon"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></span><div><h3>That smile of yours.</h3><p>The kind that makes an ordinary moment feel like the best part of my day. I hope you never run out of reasons to smile.</p></div></article>
+          <article class="reason"><span class="reason-icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span><div><h3>Your beautiful, kind heart.</h3><p>The little ways you care. The warmth you give so naturally. You make this world a gentler place just by being in it.</p></div></article>
+          <article class="reason"><span class="reason-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span><div><h3>Your wonderfully you energy.</h3><p>Your little quirks, your laughter, the way you see things. I wouldn’t change a single thing that makes you, you.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section id="little-quiz" class="quiz container" aria-labelledby="quiz-title">
+      <div class="quiz-shell reveal">
+        <div><p class="eyebrow">Let me know you a little more</p><h2 id="quiz-title">A little you.<br>A little me.<br><em>A little maybe us?</em></h2><p class="quiz-intro">Just a couple of very important questions. For future date-planning purposes, obviously.</p><p class="quiz-note">taking notes, just saying ♡</p></div>
+        <form id="date-form" class="quiz-form">
+          <!-- EDIT QUIZ QUESTIONS / OPTIONS HERE -->
+          <div><label class="field-label" for="favorite-food"><span>01</span>What’s your ultimate comfort food?</label><input class="text-input" id="favorite-food" name="food" type="text" maxlength="100" placeholder="Biryani? Fuchka? Something sweet?" autocomplete="off"></div>
+          <fieldset><legend><span>02</span>Pick our kind of perfect date.</legend><div class="date-options">
+            <label class="date-option"><input type="radio" name="date" value="a cozy café"><span class="option-label"><svg class="icon" aria-hidden="true"><use href="#i-cup"/></svg>A cozy café</span></label>
+            <label class="date-option"><input type="radio" name="date" value="a sunset walk"><span class="option-label"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg>A sunset walk</span></label>
+            <label class="date-option"><input type="radio" name="date" value="stargazing"><span class="option-label"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>Stargazing</span></label>
+          </div></fieldset>
+          <div><label class="field-label" for="little-wish"><span>03</span>One little thing on your wish list? <span>(optional)</span></label><input class="text-input" id="little-wish" name="wish" type="text" maxlength="180" placeholder="A place to go, a thing to try, a tiny adventure…" autocomplete="off"></div>
+          <div><div class="form-bottom"><button class="button" type="submit">Keep this little plan <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button><span id="save-status" class="save-status" role="status" aria-live="polite"></span></div><p class="local-note">Just between you and this browser. Answers stay on this device and aren’t sent to me.</p></div>
+          <div id="plan-summary" class="summary-box" hidden><strong>Your little someday plan ♡</strong><p id="plan-text"></p></div>
+        </form>
+      </div>
+    </section>
+    <section id="question" class="proposal" aria-labelledby="proposal-title">
+      <div class="proposal-content reveal"><p class="eyebrow">Okay, here’s the brave part</p><p class="hand">If you’re smiling right now, this is for you.</p>
+        <!-- EDIT YOUR PROPOSAL QUESTION HERE -->
+        <h2 id="proposal-title">Will you be <em>mine?</em></h2><p class="proposal-copy">No grand promises. Just real feelings, little adventures, and choosing you — one beautiful day at a time.</p>
+        <div class="proposal-actions"><button id="yes-button" type="button" class="button yes-button" aria-haspopup="dialog">YES! ❤️</button><button id="no-button" type="button" class="button secondary no-button">No 🙈</button></div>
+        <p id="proposal-feedback" class="proposal-feedback" role="status" aria-live="polite">A little question. A whole lot of heart. Your choice, always.</p><p class="proposal-signoff">Whatever your answer, I’m glad you’re you.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="container site-footer"><span class="footer-love">Made with <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg> for Putul. Every little pixel.</span><a href="https://www.instagram.com/urmiislamsristy/" target="_blank" rel="noopener noreferrer">My favorite person ↗</a><a href="#top" class="back-top">Back to the butterflies ↑</a></footer>
+  <dialog id="love-dialog" class="love-dialog" aria-labelledby="love-title" aria-describedby="love-message">
+    <button id="dialog-close" type="button" class="dialog-close" aria-label="Close love note"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="modal-heart" aria-hidden="true">♡</div><p class="hand">And just like that…</p><h2 id="love-title">You made my heart<br><em>very, very happy.</em></h2>
+    <!-- EDIT YOUR POP-UP LOVE NOTE AND SIGNATURE HERE -->
+    <p id="love-message" class="love-message">Putul, if this is the start of our story, it’s already my favorite chapter. I’d love to fill the next pages with silly jokes, long conversations, and a thousand little moments with you.</p><p class="love-signature">Here’s to a beautiful little beginning. ♡</p>
+    <p id="dialog-plan" class="dialog-plan"></p><p class="local-note">This little yes stays here. Tell me yourself when you’re ready. ♡</p><button id="keep-smiling" type="button" class="button" style="margin-top:20px">Keeping this smile ♡</button>
+  </dialog>
+  <noscript><p style="padding:20px;text-align:center;background:#f4e3e2">This love letter is yours to read. Turn on JavaScript to choose a favorite photo, save a little plan, and open the proposal note.</p></noscript>
+  <script>
+    'use strict';
+    (() => {
+      const $ = (selector) => document.querySelector(selector);
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const storageKey = 'for-putul-love-letter-v1';
+      const validDates = ['a cozy café', 'a sunset walk', 'stargazing'];
+      const state = { favorite: null, food: '', date: '', wish: '' };
+      // Browser storage is optional; all interactions also work in private mode.
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
+        if (saved && typeof saved === 'object') {
+          state.favorite = ['1', '2', '3'].includes(saved.favorite) ? saved.favorite : null;
+          state.food = typeof saved.food === 'string' ? saved.food.slice(0, 100) : '';
+          state.date = validDates.includes(saved.date) ? saved.date : '';
+          state.wish = typeof saved.wish === 'string' ? saved.wish.slice(0, 180) : '';
+        }
+      } catch (_) { /* Start fresh if browser storage is unavailable. */ }
+      function persist() {
+        try { localStorage.setItem(storageKey, JSON.stringify(state)); return true; }
+        catch (_) { return false; }
+      }
+      function renderFavorite() {
+        const cards = [...document.querySelectorAll('[data-photo]')];
+        cards.forEach(card => card.setAttribute('aria-pressed', String(card.dataset.photo === state.favorite)));
+        const chosen = cards.find(card => card.dataset.photo === state.favorite);
+        $('#photo-status').textContent = chosen ? `♡ “${chosen.dataset.title}” — your favorite. An excellent choice.` : '♡ All lovely. But which one feels most like you?';
+      }
+      document.querySelectorAll('[data-photo]').forEach(card => {
+        card.addEventListener('click', () => { state.favorite = card.dataset.photo; persist(); renderFavorite(); });
+      });
+      renderFavorite();
+      // Remote photos are placeholders. Graceful fallback if a photo URL is unavailable.
+      document.querySelectorAll('.photo-wrap img').forEach(img => {
+        function fallback() {
+          if (img.dataset.failed) return;
+          img.dataset.failed = 'true';
+          const replacement = document.createElement('span');
+          replacement.className = 'image-fallback';
+          const heart = document.createElement('span'); heart.textContent = '♡'; heart.setAttribute('aria-hidden', 'true');
+          replacement.append(heart, document.createTextNode('A little space for your photo'));
+          img.replaceWith(replacement);
+        }
+        img.addEventListener('error', fallback, { once: true });
+        if (img.complete && img.naturalWidth === 0) fallback();
+      });
+      $('#favorite-food').value = state.food;
+      $('#little-wish').value = state.wish;
+      document.querySelectorAll('input[name="date"]').forEach(input => { input.checked = input.value === state.date; });
+      function planText() {
+        const parts = [];
+        if (state.date) parts.push(`A date with you: ${state.date}.`);
+        if (state.food) parts.push(`On the menu: ${state.food}.`);
+        if (state.wish) parts.push(`A little wish: ${state.wish}`);
+        return parts.join(' ');
+      }
+      function renderPlan() {
+        const text = planText();
+        $('#plan-summary').hidden = !text;
+        $('#plan-text').textContent = text;
+        $('#dialog-plan').textContent = text;
+      }
+      renderPlan();
+      $('#date-form').addEventListener('submit', event => {
+        event.preventDefault();
+        const food = $('#favorite-food').value.trim();
+        const date = $('input[name="date"]:checked')?.value || '';
+        const wish = $('#little-wish').value.trim();
+        if (!food && !date && !wish) {
+          $('#save-status').textContent = 'Add a little answer first. There are no wrong ones. ♡';
+          $('#favorite-food').focus();
+          return;
+        }
+        Object.assign(state, { food, date, wish });
+        const saved = persist();
+        renderPlan();
+        $('#save-status').textContent = saved ? 'Tucked away on this device. ♡' : 'Kept for this visit. Browser storage is unavailable. ♡';
+      });
+      // Decorative hearts: CSS-only animation, capped for mobile performance.
+      function syncParticles() {
+        $('#particles').replaceChildren();
+        if (motion.matches) return;
+        for (let i = 0; i < 10; i++) {
+          const heart = document.createElement('span');
+          heart.className = 'floating-heart'; heart.textContent = '♡';
+          heart.style.setProperty('--left', `${i * 10 + 3}%`);
+          heart.style.setProperty('--duration', `${19 + i * 1.6}s`);
+          heart.style.setProperty('--delay', `${-i * 3.2}s`);
+          heart.style.setProperty('--size', `${12 + (i % 3) * 6}px`);
+          $('#particles').append(heart);
+        }
+      }
+      syncParticles();
+      motion.addEventListener?.('change', syncParticles);
+      if ('IntersectionObserver' in window && !motion.matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.documentElement.classList.add('motion-ready');
+      }
+      const yes = $('#yes-button'), no = $('#no-button'), dialog = $('#love-dialog');
+      let playfulMoves = 0;
+      // One small mouse-only dodge. No remains clickable and keyboard accessible.
+      no.addEventListener('pointerenter', event => {
+        if (event.pointerType !== 'mouse' || motion.matches || playfulMoves >= 1) return;
+        playfulMoves++;
+        no.style.translate = '14px -10px';
+        yes.style.transform = 'scale(1.04)';
+        $('#proposal-feedback').textContent = 'A tiny case of butterflies. You can still choose either answer. ♡';
+      });
+      no.addEventListener('focus', () => { no.style.translate = '0 0'; });
+      no.addEventListener('click', () => {
+        playfulMoves = 1; no.style.translate = '0 0'; yes.style.transform = '';
+        $('#proposal-feedback').textContent = 'That’s okay, Putul. Your honesty means a lot. No pressure, always. ♡';
+      });
+      function celebrate() {
+        if (motion.matches || typeof window.confetti !== 'function') return;
+        try {
+          const options = { particleCount: 65, spread: 72, startVelocity: 28, ticks: 160, colors: ['#a74f60', '#db9ba6', '#edd2c1', '#faf0e3', '#bea67b'], disableForReducedMotion: true, zIndex: 10000 };
+          window.confetti({ ...options, angle: 60, origin: { x: 0.06, y: 0.7 } });
+          window.confetti({ ...options, angle: 120, origin: { x: 0.94, y: 0.7 } });
+        } catch (_) { /* The note never depends on the celebration library. */ }
+      }
+      yes.addEventListener('click', () => {
+        no.style.translate = '0 0'; yes.style.transform = '';
+        // Include any current, unsaved answers in the note without storing them.
+        const live = { ...state, food: $('#favorite-food').value.trim(), date: $('input[name="date"]:checked')?.value || '', wish: $('#little-wish').value.trim() };
+        const details = [];
+        if (live.date) details.push(`Our little date idea: ${live.date}.`);
+        if (live.food) details.push(`With ${live.food}, of course.`);
+        if (live.wish) details.push(`And a little wish: ${live.wish}`);
+        $('#dialog-plan').textContent = details.join(' ');
+        $('#proposal-feedback').textContent = 'You just made this little corner of the universe a lot happier. ♡';
+        if (!dialog.open) dialog.showModal();
+        document.body.style.overflow = 'hidden';
+        celebrate();
+      });
+      function closeNote() { dialog.close(); }
+      $('#dialog-close').addEventListener('click', closeNote);
+      $('#keep-smiling').addEventListener('click', closeNote);
+      dialog.addEventListener('click', event => {
+        const r = dialog.getBoundingClientRect();
+        if (event.target === dialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) closeNote();
+      });
+      dialog.addEventListener('close', () => { document.body.style.overflow = ''; yes.focus({ preventScroll: true }); });
+    })();
+  </script>
+</body>
+</html>
